@@ -729,7 +729,7 @@ elif page == "🔬 Experimentation":
     })
     st.dataframe(
         display_exp.style.background_gradient(subset=["Lift (%)"], cmap="RdYlGn")
-                         .applymap(lambda v: "background-color:#E8F5E9; color:#006633; font-weight:600"
+                         .map(lambda v: "background-color:#E8F5E9; color:#006633; font-weight:600"
                                    if v == 1 else "background-color:#FFEBEE; color:#B71C1C; font-weight:600",
                                    subset=["Sig. 95%"]),
         use_container_width=True, hide_index=True
