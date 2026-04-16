@@ -39,8 +39,8 @@ CHANNEL_WEIGHTS = [0.45, 0.25, 0.15, 0.10, 0.05]
 
 MARKETING_CHANNELS = ["TV", "Digital", "Social Media", "Out-of-Home", "Print", "Sponsorship"]
 
-START_DATE = pd.Timestamp("2023-01-02")
-END_DATE   = pd.Timestamp("2024-12-30")
+START_DATE = pd.Timestamp("2024-01-01")
+END_DATE   = pd.Timestamp("2025-12-29")
 WEEKS = pd.date_range(START_DATE, END_DATE, freq="W-MON")
 
 
