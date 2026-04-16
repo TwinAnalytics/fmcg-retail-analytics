@@ -8,3 +8,4 @@ data/customer_segmented.csv
 .DS_Store
 *.docx
 .env
+docs/interview_prep.md
