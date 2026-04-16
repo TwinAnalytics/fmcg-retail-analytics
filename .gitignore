@@ -1,0 +1,10 @@
+data/*.csv
+data/*.parquet
+data/elasticity_results.csv
+data/customer_segmented.csv
+**/__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.docx
+.env
