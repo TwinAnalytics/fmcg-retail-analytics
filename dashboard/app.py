@@ -221,7 +221,7 @@ with st.sidebar:
         sel_markets = sel_cats = sel_years = []
 
     st.markdown("---")
-    st.caption("Nestlé NHS Global Data Analytics  \nSynthetic Demo · 2023-2024")
+    st.caption("Nestlé NHS Global Data Analytics  \nSynthetic Demo · 2024-2025")
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -257,7 +257,7 @@ if page == "📊 Executive Overview":
     <div class="nestle-header">
         <div>
             <h1>NHS Global Data Analytics</h1>
-            <p>Executive Performance Overview · 2023–2024 · Synthetic Demo Dataset</p>
+            <p>Executive Performance Overview · 2024–2025 · Synthetic Demo Dataset</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -270,9 +270,9 @@ if page == "📊 Executive Overview":
     promo_rate   = s["promo_flag"].mean() * 100
 
     # YoY
-    rev_23 = s[s["year"] == 2023]["revenue_eur"].sum()
     rev_24 = s[s["year"] == 2024]["revenue_eur"].sum()
-    yoy_pct = (rev_24 - rev_23) / rev_23 * 100 if rev_23 else 0
+    rev_25 = s[s["year"] == 2025]["revenue_eur"].sum()
+    yoy_pct = (rev_25 - rev_24) / rev_24 * 100 if rev_24 else 0
 
     col1, col2, col3, col4, col5 = st.columns(5)
     kpis = [
