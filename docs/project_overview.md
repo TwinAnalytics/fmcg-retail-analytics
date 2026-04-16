@@ -2,10 +2,7 @@
 
 ## Purpose
 
-This project demonstrates the analytical and ML capabilities required for the
-**Senior Data Scientist — NHS Global Data** role at Nestlé (Barcelona IT Hub).
-
-It simulates a realistic FMCG data science workstream covering:
+This project simulates a realistic FMCG data science workstream covering:
 - Price elasticity estimation and scenario planning
 - Marketing Mix Modelling (MMM) with channel attribution
 - Customer segmentation and lifetime value (CLV)
@@ -40,8 +37,7 @@ nestle_analytics_project/
 │   └── app.py                    # Streamlit multi-page dashboard
 │
 ├── docs/
-│   ├── project_overview.md       # This file
-│   └── interview_prep.md         # Technical Q&A and STAR answers
+│   └── project_overview.md       # This file
 │
 ├── requirements.txt
 └── README.md
