@@ -18,6 +18,24 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # ─────────────────────────────────────────────────────────────────
+# AUTO-GENERATE DATA IF MISSING (for Streamlit Cloud deployment)
+# ─────────────────────────────────────────────────────────────────
+DATA_DIR = Path(__file__).parent.parent / "data"
+
+_REQUIRED_FILES = [
+    "sales_data.csv", "marketing_spend.csv", "customer_data.csv",
+    "competitor_prices.csv", "experiments.csv", "mmm_contributions.csv",
+]
+
+if not all((DATA_DIR / f).exists() for f in _REQUIRED_FILES):
+    with st.spinner("Generating datasets for first run — this takes about 15 seconds…"):
+        import subprocess
+        subprocess.run(
+            [sys.executable, str(DATA_DIR / "generate_data.py")],
+            check=True,
+        )
+
+# ─────────────────────────────────────────────────────────────────
 # NESTLÉ BRAND THEME
 # ─────────────────────────────────────────────────────────────────
 NESTLE_RED    = "#E2001A"
@@ -140,8 +158,6 @@ st.markdown("""
 # ─────────────────────────────────────────────────────────────────
 # DATA LOADING (cached)
 # ─────────────────────────────────────────────────────────────────
-DATA_DIR = Path(__file__).parent.parent / "data"
-
 @st.cache_data(show_spinner="Loading datasets…")
 def load_data():
     sales    = pd.read_csv(DATA_DIR / "sales_data.csv",       parse_dates=["week"])
